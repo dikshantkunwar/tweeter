@@ -1,0 +1,20 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFF;
+  padding: 1.5em;
+}
+
+span {
+  font-family: 'Bungee', cursive;
+}
+
+.newtweet {
+  float: right;
+}
+
+.newtweet i {
+  color: #ff0000;
+}
+
