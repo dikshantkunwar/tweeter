@@ -1,0 +1,19 @@
+header {
+  height: 400px;
+  width: 100%;
+  /* background-color: blanchedalmond; */
+  background-color: #d17300;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 -5px;
+}
+
+.avatar {
+  margin: 0 5px;
+}
