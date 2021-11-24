@@ -1,0 +1,20 @@
+#tweet-text {
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: #f4f1ec;
+  border-bottom: 2px solid #000;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee';
+}
+
+.new-tweet button {
+  background:#4056A1 ;
+  color: #fff;
+  font-family: 'Bungee';
+  border: none;
+}
