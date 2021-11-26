@@ -7,6 +7,7 @@
 .tweet header {
   background-color: #f4f1ec;
   background-image: none;
+  margin-top: auto;
   height: auto;
 }
 
@@ -19,6 +20,7 @@
 
 .tweet hr {
   border: 1px solid rgb(98, 88, 134);
+  background-color: rgb(98, 88, 134);
 }
 
 .tweet:hover {
