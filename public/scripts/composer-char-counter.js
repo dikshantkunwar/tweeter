@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // --- our code goes here ---
   $("#tweet-text").on('keyup', function() {
     let newvalue = 140 - this.value.length;
     $(this).parent().find('.counter').val(newvalue);

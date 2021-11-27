@@ -1,5 +1,5 @@
 .tweet {
-  border: 4px solid #000;
+  border: 4px solid #545149;
   margin-top: 20px;
   padding: 10px;
 }
@@ -31,19 +31,31 @@
   color: #a18f40;
 }
 
+.tweet-content {
+  padding: 25px;
+}
+
 .profile {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+  /* justify-content: space-between; */
+}
+
+.profile-right {
+  display: flex;
+  width: 100%;
+  margin-right: 200px;
 }
 
 .profile img {
-  width: 15%;
+  width: 90px;
 }
 
 .profile span {
   float: right;
+  color: #96a4d5f7;
 }
 
 .tweet-btns {
