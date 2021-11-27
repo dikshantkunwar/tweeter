@@ -8,6 +8,10 @@
   margin-top: 25px;
 }
 
+#tweet-text::-webkit-scrollbar {
+  display: none;
+}
+
 .counter {
   float: right;
   font-family: 'Bungee';

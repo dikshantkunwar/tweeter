@@ -5,38 +5,25 @@
  */
 $(document).ready(function() {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1637773619533
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1637860019533
-    }
-  ];
+  function loadTweets() {
+    $.ajax({ url: 'http://localhost:8080/tweets',
+    type: 'GET',
+    context: document.body,
+    success: function(data) {
+      renderTweets(data);
+    }});
+  }
+
+  loadTweets();
 
   const $button = $('#tweet-btn');
-  $button.on('submit', function (event) {
-    $.ajax('https://www.google.com/', { method: 'GET' })
-    .then(function (results) {
-      // function to perform 
-      event.preventDefault();
-    });
+  $button.on('submit', function(event) {
+    event.preventDefault();
+    const formData = $(this).serialize();
+    $.ajax({ url: 'http://localhost:8080/tweets',
+      type: 'POST',
+      data: formData });
+
   });
 
   const renderTweets = function(tweets) {
@@ -47,13 +34,13 @@ $(document).ready(function() {
       console.log('Tweet is undefined');
       return;
     }
-    let alltweets= '';
-    tweets.forEach( function(tweet) {
+    let alltweets = '';
+    tweets.forEach(function(tweet) {
       alltweets = alltweets + createTweetElement(tweet);
     });
 
     $('.new-tweet').after(alltweets);
-  }
+  };
 
   const createTweetElement = function(tweet) {
 
@@ -62,7 +49,7 @@ $(document).ready(function() {
         <header>
           <div class="profile">
             <div class="profile-right">
-              <img src="/images/profile-hex.png" alt="">
+              <img src="${tweet.user.avatars}" alt="profile picture">
               <p>${tweet.user.name}</p>
             </div>
             <span><strong>${tweet.user.handle}</strong></span>
@@ -83,8 +70,8 @@ $(document).ready(function() {
       </article>
     </section>`;
 
-    return $tweet; 
-  }
+    return $tweet;
+  };
 
-  renderTweets(data);
+  //renderTweets(data);
 });
