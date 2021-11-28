@@ -17,14 +17,42 @@ $(document).ready(function() {
   loadTweets();
 
   const $button = $('#tweet-btn');
-  $button.on('submit', function(event) {
-    event.preventDefault();
-    const formData = $(this).serialize();
-    $.ajax({ url: 'http://localhost:8080/tweets',
-      type: 'POST',
-      data: formData });
+  const $form = $('.new-tweet form');
 
+  $button.on('click', function(e) {
+    e.preventDefault();
+    postTweet();
   });
+
+  $form.on('submit', function(e) {
+    e.preventDefault();
+    postTweet();
+  });
+
+  function postTweet() {
+    const formData = $form.serialize();
+    const tweetText = $('#tweet-text').val();
+
+    if (tweetText === null || tweetText === '') {
+      alert('The form data is empty');
+      return;
+    }
+
+    if (tweetText.length > 140) {
+      alert('Tweet exceeded the character limit!');
+      return;
+    }
+
+    try {
+      $.ajax({ url: '/tweets',
+       type: 'POST',
+       data: formData });
+    }
+    catch(error) {
+      console.log('an error occured when posting the tweet!');
+    }
+
+  }
 
   const renderTweets = function(tweets) {
     // loops through tweets
@@ -73,5 +101,4 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  //renderTweets(data);
 });

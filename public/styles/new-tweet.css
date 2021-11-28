@@ -23,3 +23,7 @@
   font-family: 'Bungee';
   border: none;
 }
+
+.new-tweet button:hover {
+  box-shadow: 10px 5px 5px #a8a3ea;
+}
