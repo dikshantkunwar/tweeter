@@ -4,13 +4,13 @@ nav {
   background-color: #4056A1;
   color: #FFFF;
   padding: 1.5em;
-  z-index: 9999;
   position: fixed;
   top: 0;
 }
 
 nav.scrolled {
   background-color: #e6a719;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
   transition: background-color 200ms linear;
 }
 

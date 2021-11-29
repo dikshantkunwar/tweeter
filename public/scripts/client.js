@@ -61,7 +61,8 @@ $(document).ready(function() {
        type: 'POST',
        data: formData,
       success: function(data) {
-        console.log(data);
+        loadTweets();
+        $('#tweet-text').val(''); //TODO: must be a better way of doing this
       } });
     }
     catch(error) {
