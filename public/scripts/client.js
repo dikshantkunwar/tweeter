@@ -19,6 +19,7 @@ $(document).ready(function() {
   const $button = $('#tweet-btn');
   const $form = $('.new-tweet form');
 
+  //Event listeners 
   $button.on('click', function(e) {
     e.preventDefault();
     postTweet();
@@ -27,6 +28,18 @@ $(document).ready(function() {
   $form.on('submit', function(e) {
     e.preventDefault();
     postTweet();
+  });
+
+  $('.newtweet').on('click', function() {
+    $('#tweet-text').focus();
+  })
+
+
+
+  //Scrolling behavior
+  $(document).scroll(function () {
+    let $nav = $('nav');
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
   });
 
   function postTweet() {
@@ -46,7 +59,10 @@ $(document).ready(function() {
     try {
       $.ajax({ url: '/tweets',
        type: 'POST',
-       data: formData });
+       data: formData,
+      success: function(data) {
+        console.log(data);
+      } });
     }
     catch(error) {
       console.log('an error occured when posting the tweet!');
@@ -63,6 +79,12 @@ $(document).ready(function() {
       return;
     }
     let alltweets = '';
+
+    // Sort tweets according to the created date 
+    tweets.sort(function(a,b) {
+      return new Date(b.created_at) - new Date(a.created_at);
+    });
+
     tweets.forEach(function(tweet) {
       alltweets = alltweets + createTweetElement(tweet);
     });

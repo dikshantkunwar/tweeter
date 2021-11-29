@@ -27,6 +27,10 @@ main {
   margin: 0 auto; 
 }
 
+nav:not([data-scroll='0']) nav {
+    background-color: #e6a719;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

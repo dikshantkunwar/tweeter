@@ -11,9 +11,14 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0 -5px;
+  /* margin: 0 -5px; */
 }
 
 .avatar {
   margin: 0 5px;
+}
+
+.username {
+  font-size: 32px;
+  color: white;
 }
