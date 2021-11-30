@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error-msg.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -39,32 +40,38 @@
       </div>
     </nav>
 
-    <header>
-      <div class="container">
-        <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-        </div>
-        <br>
-        <div>
-            <span class="username"><strong>Dikshant</strong> Konwar</span>
-        </div>
-      </div>
-    </header>
-  
-    <!-- Page-specific (main) content here -->
-    <main>
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form>
-          <label for="tweet-text"><strong>What are you humming about?</strong> </label>
-          <textarea name="text" id="tweet-text" rows="1"></textarea>
-          <div>
-            <button type="submit" id="tweet-btn">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+    <div class="divider">
+      <header>
+        <div class="container">
+          <div class="avatar">
+            <img src="/images/profile-hex.png"> 
           </div>
-        </form>
-      </section>
-    </main>
+          <br>
+          <div>
+              <span class="username"><strong>Dikshant</strong> Konwar</span>
+          </div>
+        </div>
+      </header>
+    
+      <!-- Page-specific (main) content here -->
+      <main>
+        <section class="error-msg" style="display: none;">
+          <p></p>
+          <i class="fas fa-exclamation"></i>
+        </section>
 
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form>
+            <label for="tweet-text"><strong>What are you humming about?</strong> </label>
+            <textarea name="text" id="tweet-text" rows="1"></textarea>
+            <div>
+              <button type="submit" id="tweet-btn">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+      </main>
+  </div>
   </body>
 </html>

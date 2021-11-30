@@ -16,6 +16,14 @@ $(document).ready(function() {
 
   loadTweets();
 
+  function errorMessage(message) {
+    let $error = $('.error-msg p');
+    $error.text(message);
+    $('.error-msg').slideDown("slow", function() {
+
+    });
+  }
+
   const $button = $('#tweet-btn');
   const $form = $('.new-tweet form');
 
@@ -34,8 +42,6 @@ $(document).ready(function() {
     $('#tweet-text').focus();
   })
 
-
-
   //Scrolling behavior
   $(document).scroll(function () {
     let $nav = $('nav');
@@ -43,16 +49,25 @@ $(document).ready(function() {
   });
 
   function postTweet() {
+    /* If error message is visible slide it up  */
+    const $error = $('.error-msg');
+    if ($error.is(':visible')) {
+      $error.slideUp('slow', function() {
+        $error.css('display', 'none');
+        $('.error-msg p').text('');
+      });
+    }
+
     const formData = $form.serialize();
     const tweetText = $('#tweet-text').val();
 
     if (tweetText === null || tweetText === '') {
-      alert('The form data is empty');
+      errorMessage('The form data is empty');
       return;
     }
 
     if (tweetText.length > 140) {
-      alert('Tweet exceeded the character limit!');
+      errorMessage('Tweet exceeded the character limit!');
       return;
     }
 
@@ -62,11 +77,11 @@ $(document).ready(function() {
        data: formData,
       success: function(data) {
         loadTweets();
-        $('#tweet-text').val(''); //TODO: must be a better way of doing this
+        //$('#tweet-text').val(''); //TODO: must be a better way of doing this
       } });
     }
     catch(error) {
-      console.log('an error occured when posting the tweet!');
+      errorMessage('an error occured when posting the tweet!');
     }
 
   }
@@ -90,7 +105,14 @@ $(document).ready(function() {
       alltweets = alltweets + createTweetElement(tweet);
     });
 
-    $('.new-tweet').after(alltweets);
+    //$('.new-tweet').after(alltweets);
+    $('.new-tweet').append(alltweets);
+  };
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
   const createTweetElement = function(tweet) {
@@ -107,7 +129,7 @@ $(document).ready(function() {
           </div>
         </header>
         <div class="tweet-content">
-          <span><strong>${tweet.content.text}</strong></span>
+          <span><strong>${escape(tweet.content.text)}</strong></span>
         </div>
         <hr>
         <footer>
