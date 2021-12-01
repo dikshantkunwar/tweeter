@@ -1,7 +1,9 @@
+@use 'variables' as v;
+
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: v.$primary-color;
   color: #FFFF;
   padding: 1.5em;
   position: fixed;
@@ -9,13 +11,13 @@ nav {
 }
 
 nav.scrolled {
-  background-color: #e6a719;
+  background-color: v.$profile-background;
   background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
   transition: background-color 200ms linear;
 }
 
 nav span {
-  font-family: "Bungee", cursive;
+  font-family: v.$bungee-font, cursive;
   font-size: xx-large;
 }
 
@@ -35,16 +37,20 @@ nav span {
   0% {
     transform: translateY(0%);
   }
+
   50% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(0%);
   }
 }
+
 .newtweet i {
   color: #ff0000;
   animation: updown 2s ease infinite;
 }
 
-/*# sourceMappingURL=nav.css.map */
+
+

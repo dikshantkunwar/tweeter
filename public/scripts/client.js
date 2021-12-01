@@ -40,7 +40,7 @@ $(document).ready(function() {
 
   $('.newtweet').on('click', function() {
     $('#tweet-text').focus();
-  })
+  });
 
   // Scrolling behavior
   $(document).scroll(function () {

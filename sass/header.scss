@@ -1,8 +1,10 @@
+@use 'variables' as v;
+
 header {
   height: 500px;
   width: 100%;
   margin-top: 120px;
-  background-color: #e6a719;
+  background-color: v.$profile-background;
   background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
 }
 
@@ -33,7 +35,9 @@ header {
   .error-msg {
     margin-top: 50px;
   }
+  
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -51,10 +55,8 @@ header {
   color: white;
 }
 
-::placeholder {
+::placeholder{
   font-weight: bolder;
   color: #545149;
   font-size: 24px;
 }
-
-/*# sourceMappingURL=header.css.map */

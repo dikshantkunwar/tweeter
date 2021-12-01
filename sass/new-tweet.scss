@@ -1,3 +1,5 @@
+@use 'variables' as v;
+
 #tweet-text {
   width: 100%;
   resize: none;
@@ -14,18 +16,16 @@
 
 .counter {
   float: right;
-  font-family: "Bungee";
+  font-family: v.$bungee-font;
 }
 
 .new-tweet button {
-  background: #4056A1;
+  background: v.$primary-color ;
   color: #fff;
-  font-family: "Bungee";
+  font-family: v.$bungee-font;
   border: none;
 }
 
 .new-tweet button:hover {
   background-color: #2851da;
 }
-
-/*# sourceMappingURL=new-tweet.css.map */
