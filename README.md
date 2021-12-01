@@ -15,6 +15,7 @@ Completed the first pass of getting the user interface and general AJAX POST, GE
 3. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
+5. `npm run sass-watch` to run the sass pre compiler.
 
 ## Project Screenshot(s)
 
