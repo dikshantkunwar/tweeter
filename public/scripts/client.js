@@ -7,17 +7,17 @@ $(document).ready(function() {
 
   function loadTweets() {
     $.ajax({ url: 'http://localhost:8080/tweets',
-    type: 'GET',
-    context: document.body,
-    success: function(data) {
-      renderTweets(data);
-    }});
+      type: 'GET',
+      context: document.body,
+      success: function(data) {
+        renderTweets(data);
+      }});
   }
 
   loadTweets();
 
   function errorMessage(message) {
-    let $error = $('.error-msg p');
+    const $error = $('.error-msg p');
     $error.text(message);
     $('.error-msg').slideDown("slow", function() {
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
   const $scrollToTop = $('#scrollToTopBtn');
   const rootElement = document.documentElement;
 
-  //Event listeners 
+  //Event listeners
   $button.on('click', function(e) {
     e.preventDefault();
     postTweet();
@@ -40,11 +40,11 @@ $(document).ready(function() {
     postTweet();
   });
 
-  $scrollToTop.on('click', function(){
+  $scrollToTop.on('click', function() {
     rootElement.scrollTo({
       top: 0,
       behavior: 'smooth'
-    })
+    });
   });
 
   $('.newtweet').on('click', function() {
@@ -52,7 +52,7 @@ $(document).ready(function() {
   });
 
   // Scrolling behavior
-  $(document).scroll(function () {
+  $(document).scroll(function() {
     let $nav = $('nav');
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
   });
@@ -63,7 +63,7 @@ $(document).ready(function() {
     if ($error.is(':visible')) {
       $error.slideUp('slow', function() {
         $error.css('display', 'none');
-        $('.error-msg p').text(''); // empty the error text and 
+        $('.error-msg p').text(''); // empty the error text and
       });
     }
 
@@ -82,15 +82,14 @@ $(document).ready(function() {
 
     try {
       $.ajax({ url: '/tweets',
-       type: 'POST',
-       data: formData,
-      success: function(data) {
-        loadTweets();
-        $('#tweet-text').val('');   // empty the tweet text input and
-        $('.counter').val(140);     // reset the counter 
-      } });
-    }
-    catch(error) {
+        type: 'POST',
+        data: formData,
+        success: function(data) {
+          loadTweets();
+          $('#tweet-text').val('');   // empty the tweet text input and
+          $('.counter').val(140);     // reset the counter
+        } });
+    } catch (error) {
       errorMessage('an error occured when posting the tweet!');
     }
 
@@ -106,7 +105,7 @@ $(document).ready(function() {
     }
     let alltweets = '';
 
-    // Sort tweets according to the created date 
+    // Sort tweets according to the created date
     tweets.sort(function(a,b) {
       return new Date(b.created_at) - new Date(a.created_at);
     });
@@ -119,11 +118,11 @@ $(document).ready(function() {
       $('.tweet').each(function(i) {
         this.remove();  //remove all existing tweets
       });
-    } 
+    }
     $('.new-tweet').append(alltweets);
   };
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
