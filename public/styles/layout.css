@@ -27,6 +27,13 @@ main {
   margin: 0 auto;
 }
 
+#scrollToTopBtn {
+  float: right;
+  border-radius: 20px;
+  color: #4056A1;
+  background-color: #e6a719;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

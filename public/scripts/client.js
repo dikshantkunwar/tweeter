@@ -26,6 +26,8 @@ $(document).ready(function() {
 
   const $button = $('#tweet-btn');
   const $form = $('.new-tweet form');
+  const $scrollToTop = $('#scrollToTopBtn');
+  const rootElement = document.documentElement;
 
   //Event listeners 
   $button.on('click', function(e) {
@@ -36,6 +38,13 @@ $(document).ready(function() {
   $form.on('submit', function(e) {
     e.preventDefault();
     postTweet();
+  });
+
+  $scrollToTop.on('click', function(){
+    rootElement.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   });
 
   $('.newtweet').on('click', function() {
@@ -54,7 +63,7 @@ $(document).ready(function() {
     if ($error.is(':visible')) {
       $error.slideUp('slow', function() {
         $error.css('display', 'none');
-        $('.error-msg p').text('');
+        $('.error-msg p').text(''); // empty the error text and 
       });
     }
 
@@ -77,7 +86,8 @@ $(document).ready(function() {
        data: formData,
       success: function(data) {
         loadTweets();
-        $('#tweet-text').val('');
+        $('#tweet-text').val('');   // empty the tweet text input and
+        $('.counter').val(140);     // reset the counter 
       } });
     }
     catch(error) {

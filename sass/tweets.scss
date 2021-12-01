@@ -4,25 +4,25 @@
   border: 4px solid #545149;
   margin-top: 50px;
   padding: 10px;
-}
 
-.tweet header {
-  background-color: #f4f1ec;
-  background-image: none;
-  margin-top: auto;
-  height: auto;
-}
+  header {
+    background-color: #f4f1ec;
+    background-image: none;
+    margin-top: auto;
+    height: auto;
+  }
 
-.tweet footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 16px;
-}
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+  }
 
-.tweet hr {
-  border: 1px solid rgb(98, 88, 134);
-  background-color: rgb(98, 88, 134);
+  hr {
+    border: 1px solid rgb(98, 88, 134);
+    background-color: rgb(98, 88, 134);
+  }
 }
 
 .tweet:hover {
@@ -42,22 +42,22 @@
   flex-direction: row;
   width: 100%;
   justify-content: center;
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+
+  span {
+    float: right;
+    color: #96a4d5f7;
+  }
 }
 
 .profile-right {
   display: flex;
   width: 100%;
-}
-
-.profile img {
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-}
-
-.profile span {
-  float: right;
-  color: #96a4d5f7;
 }
 
 .tweet-btns {

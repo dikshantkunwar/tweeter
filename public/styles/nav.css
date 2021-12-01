@@ -7,6 +7,10 @@ nav {
   position: fixed;
   top: 0;
 }
+nav span {
+  font-family: "Bungee", cursive;
+  font-size: xx-large;
+}
 
 nav.scrolled {
   background-color: #e6a719;
@@ -14,23 +18,29 @@ nav.scrolled {
   transition: background-color 200ms linear;
 }
 
-nav span {
-  font-family: "Bungee", cursive;
+/*nav span {
+  font-family: v.$bungee-font, cursive;
   font-size: xx-large;
-}
-
+}*/
 .newtweet {
   display: flex;
   flex-direction: column;
   align-items: center;
   float: right;
 }
-
 .newtweet p {
   margin-top: 0;
   margin-bottom: 0;
 }
+.newtweet i {
+  color: #ff0000;
+  animation: updown 2s ease infinite;
+}
 
+/*.newtweet p {
+  margin-top: 0;
+  margin-bottom: 0;
+}*/
 @keyframes updown {
   0% {
     transform: translateY(0%);
@@ -41,10 +51,6 @@ nav span {
   100% {
     transform: translateY(0%);
   }
-}
-.newtweet i {
-  color: #ff0000;
-  animation: updown 2s ease infinite;
 }
 
 /*# sourceMappingURL=nav.css.map */
