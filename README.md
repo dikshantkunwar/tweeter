@@ -18,11 +18,11 @@ Completed the first pass of getting the user interface and general AJAX POST, GE
 
 ## Project Screenshot(s)
 
-!["Screenshot of tweet compose box"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweet.jpg)
-!["Screenshot of posted tweet"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweeted.jpg)
-!["Viewport on large screens > 1024px"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/large-viewport.jpg)
-!["Responsive design < 1024px"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/responsive-vp.jpg)
-!["Error message"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/empty-post-err.jpg)
+!["Screenshot of tweet compose box"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/tweet.jpg)
+!["Screenshot of posted tweet"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/tweeted.jpg)
+!["Viewport on large screens > 1024px"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/large-viewport.jpg)
+!["Responsive design < 1024px"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/responsive-vp.jpg)
+!["Error message"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/empty-post-err.jpg)
 
 ## Dependencies
 
