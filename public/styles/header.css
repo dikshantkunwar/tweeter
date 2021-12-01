@@ -53,3 +53,9 @@ header {
   font-size: 32px;
   color: white;
 }
+
+::placeholder{
+  font-weight: bolder;
+  color: #545149;
+  font-size: 24px;
+}

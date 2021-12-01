@@ -42,7 +42,7 @@ $(document).ready(function() {
     $('#tweet-text').focus();
   })
 
-  //Scrolling behavior
+  // Scrolling behavior
   $(document).scroll(function () {
     let $nav = $('nav');
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
@@ -77,7 +77,7 @@ $(document).ready(function() {
        data: formData,
       success: function(data) {
         loadTweets();
-        //$('#tweet-text').val(''); //TODO: must be a better way of doing this
+        $('#tweet-text').val('');
       } });
     }
     catch(error) {
@@ -105,7 +105,11 @@ $(document).ready(function() {
       alltweets = alltweets + createTweetElement(tweet);
     });
 
-    //$('.new-tweet').after(alltweets);
+    if ($('.tweet')[0]) { // true if an element with tweet class exists
+      $('.tweet').each(function(i) {
+        this.remove();  //remove all existing tweets
+      });
+    } 
     $('.new-tweet').append(alltweets);
   };
 
@@ -125,7 +129,7 @@ $(document).ready(function() {
               <img src="${tweet.user.avatars}" alt="profile picture">
               <p>${tweet.user.name}</p>
             </div>
-            <span><strong>${tweet.user.handle}</strong></span>
+            <span><strong>${$.trim(tweet.user.handle.replace(/\s\s+/g,' '))}</strong></span>
           </div>
         </header>
         <div class="tweet-content">
