@@ -15,15 +15,24 @@ Completed the first pass of getting the user interface and general AJAX POST, GE
 3. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
-5. `npm run sass-watch` to run the sass pre compiler.
+5. `npm run sass-watch` to run the sass pre processor.
 
 ## Project Screenshot(s)
 
 !["Screenshot of tweet compose box"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/tweet.jpg)
+Tweet compose box with filled input 
+
 !["Screenshot of posted tweet"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/tweeted.jpg)
+The posted tweet is created on top of the tweet list 
+
 !["Viewport on large screens > 1024px"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/large-viewport.jpg)
+Viewport on large screens 
+
 !["Responsive design < 1024px"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/responsive-vp.jpg)
+On screens lower than 1024px the display changes into a vertical format
+
 !["Error message"](https://github.com/dikshantkunwar/tweeter/blob/master/docs/empty-post-err.jpg)
+Error messages are displayed on top of the input box 
 
 ## Dependencies
 
